@@ -5,22 +5,24 @@ import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
 class App extends React.Component {
+    state = {
+        items: [
+            {
+                value: 'Написать новое приложение',
+                isDone: true
+            },
+            {
+                value: 'Прописать props-ы',
+                isDone: false
+            },
+            {
+                value: 'Отправить pullrequest',
+                isDone: false
+            }
+        ]
+    };
+    
     render() {
-        const items = [
-                {
-                    value: 'Написать новое приложение',
-                    isDone: true
-                },
-                {
-                    value: 'Прописать props-ы',
-                    isDone: false
-                },
-                {
-                    value: 'Отправить pullrequest',
-                    isDone: false
-                }
-            ];
-       
        return (<div className={styles.wrap}>
            <h1 className={styles.title}>Важные дела:</h1> 
            <InputItem />
