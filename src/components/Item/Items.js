@@ -17,6 +17,7 @@ const Item  = ({ value, isDone, onClickDone, onClickDelete, id}) => (<span class
       onClickDone={onClickDone}
       isDone={isDone}
       id={id}
+      onClick={() => onClickDone(isDone)}
     />
     <DeleteButton onClickDelete={onClickDelete} id={id} />
     { value }
