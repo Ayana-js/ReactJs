@@ -1,0 +1,13 @@
+.wrap {
+    margin: auto;
+    width: 300px;
+  }
+  
+  .title {
+      font-family: Roboto;
+      color: #c15;
+  }
+  
+  .wrap__footer {
+      color: red;
+  }
