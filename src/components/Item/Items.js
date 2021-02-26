@@ -12,11 +12,12 @@ const Item  = ({ value, isDone, onClickDone, onClickDelete, id}) => (<span class
 }>
 
 <Checkbox
-      value={value}
-      checked={isDone}
-      onClickDone={onClickDone}
-      isDone={isDone}
-      id={id}
+    //   value={value}
+    //   checked={isDone}
+    //   onClickDone={onClickDone}
+    //   isDone={isDone}
+    //   id={id}
+      onClick={() => onClickDone(id)}
     />
     <DeleteButton onClickDelete={onClickDelete} id={id} />
     { value }
