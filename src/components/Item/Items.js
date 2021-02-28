@@ -4,23 +4,22 @@ import classnames from 'classnames';
 import Checkbox from '../Checkbox/Checkbox';
 import DeleteButton from '../DeleteButton/DeleteButton';
 
-const Item  = ({ value, isDone, onClickDone, onClickDelete, id}) => (<span className={
+const Item  = ({ value, isDone, isDeleted, onClickDone, onClickDelete, id}) => (<span className={
     classnames ({
        [styles.item]: true,
-       [styles.done]: isDone
+       [styles.done]: isDone,
+       [styles.delete]: isDeleted
     })
 }>
 
 <Checkbox
-    //   value={value}
-    //   checked={isDone}
-    //   onClickDone={onClickDone}
-    //   isDone={isDone}
-    //   id={id}
-      onClick={() => onClickDone(id)}
-    />
-    <DeleteButton onClickDelete={onClickDelete} id={id} />
-    { value }
+    onClick={() => onClickDone(id)}
+/>
+
+<DeleteButton 
+    onClick={() => onClickDelete(id)}
+/>
+{ value }
 </span> 
 );
  

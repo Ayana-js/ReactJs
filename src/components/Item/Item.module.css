@@ -5,3 +5,7 @@
 .done {
    text-decoration: none;
 }
+
+.delete {
+    visibility: hidden;
+}

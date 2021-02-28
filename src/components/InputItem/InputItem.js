@@ -9,7 +9,7 @@ const InputItem = () => (<div>
        fullWidth
        margin="normal"
        InputLabelProps={{
-         shrink: true,
+       shrink: true,
        }}
     />
 </div>);

@@ -4,20 +4,9 @@ import PropTypes from 'prop-types';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-
 import styles from './Checkbox.module.css';
-
-class Checkboxlabel extends React.Component {
-  componentDidMount() {
-    this.intervalId = setInterval(
-      () => console.log(`I'll eat your memory`),
-      500
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.intervalId);
-  }
+  
+class CheckboxLabel extends React.Component {
 
   render() {
     const { value, isDone, onClickDone, id } = this.props;

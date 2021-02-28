@@ -10,16 +10,19 @@ class App extends React.Component {
             {
                 value: 'Написать новое приложение',
                 isDone: true,
+                isDeleted: false,
                 id: 1
             },
             {
                 value: 'Прописать props-ы',
                 isDone: true,
+                isDeleted: false,
                 id: 2
             },
             {
                 value: 'Отправить pullrequest',
                 isDone: true,
+                isDeleted: false,
                 id: 3
             }
         ],
@@ -37,11 +40,22 @@ class App extends React.Component {
         this.setState({ items: newItemList });
     };
 
+    onClickDelete = id => {
+        const updatedItemList = this.state.items.map(item => {
+            const updatedItem = {...item};
+            if (item = item.id !=id) {
+                updatedItem.isDeleted = updatedItem.isDeleted;
+        }
+            return updatedItem;
+        });
+        this.setState({ items: updatedItemList });
+    };
+
     render() {
        return (<div className={styles.wrap}>
            <h1 className={styles.title}>Важные дела:</h1> 
            <InputItem />
-           <ItemList items = {this.state.items} onClickDone={this.onClickDone} />
+           <ItemList items = {this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
            <Footer count={this.state.count} />
        </div>);
     }
