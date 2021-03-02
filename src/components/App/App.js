@@ -29,6 +29,7 @@ class App extends React.Component {
         count: 6
     };
     
+    
     onClickDone = id => {
         const newItemList = this.state.items.map(item => {
             const newItem = { ...item};
@@ -39,20 +40,21 @@ class App extends React.Component {
         });
         this.setState({ items: newItemList });
     };
-
+     
     onClickDelete = id => {
         const updatedItemList = this.state.items.map(item => {
             const updatedItem = {...item};
-            if (item = item.id !=id) {
-                updatedItem.isDeleted = updatedItem.isDeleted;
+            if (item.id === id) {
+                updatedItem.isDeleted =! updatedItem.isDeleted;
         }
             return updatedItem;
         });
         this.setState({ items: updatedItemList });
     };
 
+
     render() {
-       return (<div className={styles.wrap}>
+       return ( <div className={styles.wrap}>
            <h1 className={styles.title}>Важные дела:</h1> 
            <InputItem />
            <ItemList items = {this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
