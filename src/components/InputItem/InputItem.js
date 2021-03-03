@@ -1,17 +1,40 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
-const InputItem = () => (<div> 
-     <TextField 
-       id="standard-full-width"
-       style={{ margin: 8 }}
-       placeholder="Добавить задание"
-       fullWidth
-       margin="normal"
-       InputLabelProps={{
-       shrink: true,
-       }}
-    />
-</div>);
+class InputItem extends React.Component {
+  state = {
+    InputValue: '',
+  };
+
+  render() {
+    const { onClickAdd } = this.props;
+
+    return (
+      <Grid>
+        <TextField
+          id="standard-full-width"
+          style={{ margin: 8 }}
+          placeholder="Добавить задание"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          value={this.state.InputValue}
+          onChange={event=>this.setState({ InputValue:event.target.value })}
+        />
+        <Button
+          variant='contained'
+          color='secondary'
+          fullWidth
+          onClick={() => {onClickAdd(this.state.InputValue)}}
+        >
+          Add
+     </Button>
+      </Grid>);
+  }
+}
 
 export default InputItem;
