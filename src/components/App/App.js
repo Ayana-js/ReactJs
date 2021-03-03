@@ -78,7 +78,7 @@ class App extends React.Component {
                     </CardContent>
                 </Card>
             </div>);
-    }
+    };
 };
 
 export default App;

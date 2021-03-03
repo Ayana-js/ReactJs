@@ -6,7 +6,24 @@ import Grid from '@material-ui/core/Grid';
 class InputItem extends React.Component {
   state = {
     InputValue: '',
+    error: false
   };
+
+  onButtonClick = () => {
+
+    if (this.state.inputValue === '') {
+      this.setState({
+        error: true,
+      });
+    } else {      
+      this.setState({
+        error: false,
+        inputValue: ''
+    })
+
+    this.props.onClickAdd(this.state.InputValue);
+  }
+};
 
   render() {
     const { onClickAdd } = this.props;
@@ -16,6 +33,7 @@ class InputItem extends React.Component {
         <TextField
           id="standard-full-width"
           style={{ margin: 8 }}
+          error={this.state.error}
           placeholder="Добавить задание"
           fullWidth
           margin="normal"
@@ -23,15 +41,15 @@ class InputItem extends React.Component {
             shrink: true,
           }}
           value={this.state.InputValue}
-          onChange={event=>this.setState({ InputValue:event.target.value })}
+          onChange={event => this.setState({ InputValue: event.target.value })}
         />
         <Button
           variant='contained'
           color='secondary'
           fullWidth
-          onClick={() => {onClickAdd(this.state.InputValue)}}
+          onClick={this.onButtonClick}
         >
-          Add
+          Добавить
      </Button>
       </Grid>);
   }
