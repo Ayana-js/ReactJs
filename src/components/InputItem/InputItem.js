@@ -5,6 +5,17 @@ import Grid from '@material-ui/core/Grid';
 
 
 class InputItem extends React.Component {
+  componentDidMount() {
+    console.log('componentDidMount');
+}
+
+componentDidUpdate() {
+    console.log('componentDidUpdate');
+}
+
+componentWillUnmount() {
+    console.log('componentWillUnmount');
+}
   state = {
     value: '',
     error: false

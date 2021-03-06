@@ -6,25 +6,41 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Checkbox from '@material-ui/core/Checkbox';
 import PropTypes from 'prop-types';
 
+class Item extends React.Component {
+componentDidMount() {
+    console.log('componentDidMount');
+}
 
-const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (
-    <div className={
-        classnames({
-            [styles.item]: false,
-            [styles.done]: isDone,
-        })
-    }>
+componentDidUpdate() {
+    console.log('componentDidUpdate');
+}
 
-        <Checkbox
-            onClick={() => onClickDone(id)}
-        />
+componentWillUnmount() {
+    console.log('componentWillUnmount');
+}
 
-        <IconButton aria-label="Delete" onClick={() => onClickDelete(id)}>
-            <DeleteIcon />
-        </IconButton>
-        { value}
-    </div>
-);
+    render() {
+        const { value, isDone, onClickDone, onClickDelete, id } = this.props;
+
+    return(
+        <div className={
+            classnames({
+                [styles.item]: false,
+                [styles.done]: isDone,
+            })
+        }>
+    
+            <Checkbox
+                onClick={() => onClickDone(id)}
+            />
+    
+            <IconButton aria-label="Delete" onClick={() => onClickDelete(id)}>
+                <DeleteIcon />
+            </IconButton>
+            { value}
+        </div>) 
+    }
+};
 
 Item.defaultProps = {
     value: "Задача без имени"
