@@ -17,6 +17,13 @@ const ItemList = ({ items, onClickDone, onClickDelete }) => (
    ))}
 </List>);
 
+ItemList.defaultProps = {
+   items: [{
+       value: 'Упс, задачи не найдены.',
+       isDone: false,
+   }]
+};
+
 ItemList.propTypes = {
    items: PropTypes.array
 };

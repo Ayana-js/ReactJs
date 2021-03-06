@@ -11,7 +11,7 @@ class InputItem extends React.Component {
 
   onButtonClick = (event) =>
         this.setState({
-            value: event.target.value,
+            value: event.target.value.toUpperCase(),
             error: event.target.value.length > 0
         });
         
@@ -28,7 +28,7 @@ class InputItem extends React.Component {
           InputLabelProps={{
             shrink: true,
           }}
-          value={this.state.InputValue}
+          value={this.state.value}
           onChange={ this.onButtonClick }
         />
         <Button
@@ -38,8 +38,9 @@ class InputItem extends React.Component {
           onClick={() => {
             if (this.state.value !== '') {
                 onClickAdd(this.state.value);
-                this.setState({ value: '',
-                    error: true
+                this.setState({ 
+                    value: '',
+                    error: false
                 })}
             }
           }

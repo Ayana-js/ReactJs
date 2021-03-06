@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 
 const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (
-    <span className={
+    <div className={
         classnames({
             [styles.item]: false,
             [styles.done]: isDone,
@@ -23,8 +23,12 @@ const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (
             <DeleteIcon />
         </IconButton>
         { value}
-    </span>
+    </div>
 );
+
+Item.defaultProps = {
+    value: "Задача без имени"
+};
 
 Item.propTypes = {
     value: PropTypes.string
