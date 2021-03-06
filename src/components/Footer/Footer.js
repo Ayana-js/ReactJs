@@ -11,4 +11,8 @@ Footer.defaultProps = {
     count: 0
 };
 
+Footer.PropTypes = {
+  count: PropTypes.number.isRequired
+};
+
 export default Footer;
