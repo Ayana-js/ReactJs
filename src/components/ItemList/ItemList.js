@@ -1,7 +1,6 @@
 import React from 'react';
 import Item from '../Item/Items';
 import List from '@material-ui/core/List';
-import PropTypes from 'prop-types';
 
 const ItemList = ({ items, onClickDone, onClickDelete }) => (
 <List>
@@ -22,10 +21,6 @@ ItemList.defaultProps = {
        value: 'Упс, задачи не найдены.',
        isDone: false,
    }]
-};
-
-ItemList.propTypes = {
-   items: PropTypes.array.isRequired
 };
 
 export default ItemList;
