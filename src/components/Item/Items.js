@@ -1,27 +1,37 @@
 import React from 'react';
 import styles from './Item.module.css';
 import classnames from 'classnames';
-import Checkbox from '../Checkbox/Checkbox';
-import DeleteButton from '../DeleteButton/DeleteButton';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Checkbox from '@material-ui/core/Checkbox';
+import PropTypes from 'prop-types';
 
-const Item  = ({ value, isDone, onClickDone, onClickDelete, id}) => (<span className={
-    classnames ({
-       [styles.item]: true,
-       [styles.done]: isDone
-    })
-}>
 
-<Checkbox
-    //   value={value}
-    //   checked={isDone}
-    //   onClickDone={onClickDone}
-    //   isDone={isDone}
-    //   id={id}
-      onClick={() => onClickDone(id)}
-    />
-    <DeleteButton onClickDelete={onClickDelete} id={id} />
-    { value }
-</span> 
+const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (
+    <div className={
+        classnames({
+            [styles.item]: false,
+            [styles.done]: isDone,
+        })
+    }>
+
+        <Checkbox
+            onClick={() => onClickDone(id)}
+        />
+
+        <IconButton aria-label="Delete" onClick={() => onClickDelete(id)}>
+            <DeleteIcon />
+        </IconButton>
+        { value}
+    </div>
 );
- 
- export default Item;
+
+Item.defaultProps = {
+    value: "Задача без имени"
+};
+
+Item.propTypes = {
+    value: PropTypes.string.isRequired
+};
+
+export default Item;

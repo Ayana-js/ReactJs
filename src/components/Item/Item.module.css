@@ -1,7 +1,8 @@
-.item {
+.done {
     text-decoration: line-through;
 }
 
-.done {
+.item {
    text-decoration: none;
+   white-space: nowrap;
 }
