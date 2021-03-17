@@ -1,33 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
-
-class InputItem extends React.Component {
-  componentDidMount() {
-    console.log('componentDidMount');
-}
-
-componentDidUpdate() {
-    console.log('componentDidUpdate');
-}
-
-componentWillUnmount() {
-    console.log('componentWillUnmount');
-}
-  state = {
+const InputItem = () => {
+  const initialState = {
     value: '',
     error: false
   };
+ 
+const [value, setValue] = useState(initialState.value);
+const [error, setError] = useState(initialState.error);
 
-  onButtonClick = (event) =>
-        this.setState({
-            value: event.target.value.toUpperCase(),
-            error: event.target.value.length > 0
-        });
+useEffect(()=> {
+  console.log("update");
+}, []);
+
+ const onButtonClick = (event) =>
+        {
+            value: event.target.value.toUpperCase();
+            // error: event.target.value.length > 0;
+            return setValue(value);
+                   setError(error);
+        }
         
-  render() {
+
     const { onClickAdd } = this.props;
 
     return (
@@ -59,9 +56,9 @@ componentWillUnmount() {
         >
           Добавить
      </Button>
-      </Grid>);
-  }
-}
+      </Grid>
+  );
+};
 
 
 export default InputItem;

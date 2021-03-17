@@ -30,25 +30,28 @@ const App=() => {
 
    const [item, setItem] = useState(initialState.item);
    const [count, setCount] = useState(initialState.count);
+   const [value, setValue] = useState(initialState.value);
 
    useEffect(()=> {
        console.log("update");
    }, []);
 
       const onClickDone = id => {
-            const newItem = { ...item };
-            if (item.id === id) {
-                newItem.isDone = !item.isDone;
+            const newItem = { ...value };
+            if (value.id === id) {
+                newItem.isDone = !value.isDone;
             }
             return newItem;
         setItem(newItem)
+
       };
 
 
-    const onClickDelete = id => {
+    const onClickDelete = (id) => {
         return item.id !== id;
-    };
         setCount((count) => count-1)
+
+    };
     
         return (
             <div className={styles.wrap}>
@@ -58,6 +61,7 @@ const App=() => {
 
                         <ItemList
                         />
+                        <Footer />
 
                     </CardContent>
                 </Card>

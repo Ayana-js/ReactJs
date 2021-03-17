@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Item.module.css';
 import classnames from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
@@ -6,17 +6,37 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Checkbox from '@material-ui/core/Checkbox';
 import PropTypes from 'prop-types';
 
-class Item extends React.Component {
-componentDidMount() {
-    this.timerID = setInterval(() => console.log('componentDidMount'), 1000);
-}
+const Item=() => {
+    const initialState = {
+        items: [
+            {
+                value: 'Написать новое приложение',
+                isDone: false,
+                id: 1
+            },
+            {
+                value: 'Прописать props-ы',
+                isDone: false,
+                id: 2
+            },
+            {
+                value: 'Отправить pullrequest',
+                isDone: false,
+                id: 3
+            }
+        ],
+        count: 3
+    };
 
-componentWillUnmount() {
-    clearInterval(this.timerID);
-}
+        const [value, setValue] = useState(initialState.value);
+        const [isDone, setIsDone] = useState(initialState.isDone);
+        const [onClickDone] = useState(initialState.onClickDone);
+        const [onClickDelete] = useState(initialState.onClickDelete);
+        const [id, setId] = useState(initialState.id);
 
-    render() {
-        const { value, isDone, onClickDone, onClickDelete, id } = this.props;
+        useEffect(()=> {
+            console.log("update");
+        }, []);
 
     return(
         <div className={
@@ -35,7 +55,7 @@ componentWillUnmount() {
             </IconButton>
             { value}
         </div>) 
-    }
+    
 };
 
 Item.defaultProps = {

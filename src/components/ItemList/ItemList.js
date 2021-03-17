@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Item from '../Item/Items';
 import List from '@material-ui/core/List';
 
-class ItemList extends React.Component {
-   componentDidMount() {
-      console.log('componentDidMount');
-  }
-  
-  componentDidUpdate() {
-      console.log('componentDidUpdate');
-  }
-  
-  componentWillUnmount() {
-      console.log('componentWillUnmount');
-  }
-  render () {
-     const { items, onClickDone, onClickDelete } = this.props;
+const ItemList=() => {
+   const initialState = {
+      items: [
+          {
+              value: 'Написать новое приложение',
+              isDone: false,
+              id: 1
+          },
+          {
+              value: 'Прописать props-ы',
+              isDone: false,
+              id: 2
+          },
+          {
+              value: 'Отправить pullrequest',
+              isDone: false,
+              id: 3
+          }
+      ],
+      count: 3
+  };
+ 
+     const [items, setItem] = useState(initialState.items);
+     const [onClickDone] = useState(initialState.onClickDone);
+     const [onClickDelete] = useState(initialState.onClickDelete);
+     
+     useEffect(()=> {
+        console.log("update");
+    }, []);
 
      return (
       <List>
@@ -31,7 +46,6 @@ class ItemList extends React.Component {
       ))}
    </List>
      )
-  }
 }
 
 ItemList.defaultProps = {

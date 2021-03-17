@@ -1,27 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 
-class Footer extends React.Component {
-  componentDidMount() {
-    console.log('componentDidMount');
-}
+const Footer=() => {
+  const initialState = {
+    items: [
+        {
+            value: 'Написать новое приложение',
+            isDone: false,
+            id: 1
+        },
+        {
+            value: 'Прописать props-ы',
+            isDone: false,
+            id: 2
+        },
+        {
+            value: 'Отправить pullrequest',
+            isDone: false,
+            id: 3
+        }
+    ],
+    count: 3
+};
 
-componentDidUpdate() {
-    console.log('componentDidUpdate');
-}
-
-componentWillUnmount() {
-    console.log('componentWillUnmount');
-}
-  render () {
-   const { count } = this.props;
+  const [count, setCount] = useState(initialState.count);
+  
+  useEffect(()=> {
+    console.log("update");
+  }, []);
 
     return (
       <Typography variant='subtitle1' color='textSecondary'>
       Осталось выполнить вот столько дел: {count}
   </Typography>);
-  }
 }
 
 Footer.defaultProps = {
