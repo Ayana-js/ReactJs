@@ -24,10 +24,10 @@ const ItemList=() => {
       count: 3
   };
  
-     const [items, setItem] = useState(initialState.items);
+     const [items] = useState(initialState.items);
      const [onClickDone] = useState(initialState.onClickDone);
      const [onClickDelete] = useState(initialState.onClickDelete);
-     
+
      useEffect(()=> {
         console.log("update");
     }, []);

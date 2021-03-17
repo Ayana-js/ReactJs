@@ -9,23 +9,19 @@ const InputItem = () => {
     error: false
   };
  
-const [value, setValue] = useState(initialState.value);
-const [error, setError] = useState(initialState.error);
+const [value] = useState(initialState.value);
+// const [error] = useState(initialState.error);
+const [onClickAdd] = useState(initialState.onClickAdd);
 
 useEffect(()=> {
   console.log("update");
 }, []);
 
- const onButtonClick = (event) =>
-        {
-            value: event.target.value.toUpperCase();
-            // error: event.target.value.length > 0;
-            return setValue(value);
-                   setError(error);
-        }
-        
-
-    const { onClickAdd } = this.props;
+ const onButtonClick = (event) => {
+      const initialState = ({ 
+            value: event.target.value.toUpperCase(),
+            error: event.target.value.length > 0,
+        })};
 
     return (
       <Grid>
@@ -37,17 +33,17 @@ useEffect(()=> {
           InputLabelProps={{
             shrink: true,
           }}
-          value={this.state.value}
-          onChange={ this.onButtonClick }
+          value={value}
+          onChange={onButtonClick }
         />
         <Button
           variant='contained'
           color='secondary'
           fullWidth
           onClick={() => {
-            if (this.state.value !== '') {
-                onClickAdd(this.state.value);
-                this.setState({ 
+            if (value !== '') {
+                onClickAdd(value);
+                const initialState = ({ 
                     value: '',
                     error: false
                 })}

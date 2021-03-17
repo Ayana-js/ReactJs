@@ -24,7 +24,7 @@ const Footer=() => {
     count: 3
 };
 
-  const [count, setCount] = useState(initialState.count);
+  const [count] = useState(initialState.count);
   
   useEffect(()=> {
     console.log("update");

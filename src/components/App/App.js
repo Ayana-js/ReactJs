@@ -25,43 +25,61 @@ const App=() => {
                 id: 3
             }
         ],
-        count: 3
+        count: 6
     };
 
-   const [item, setItem] = useState(initialState.item);
+   const [items, setItems] = useState(initialState.items);
    const [count, setCount] = useState(initialState.count);
-   const [value, setValue] = useState(initialState.value);
 
    useEffect(()=> {
        console.log("update");
    }, []);
 
-      const onClickDone = id => {
-            const newItem = { ...value };
-            if (value.id === id) {
-                newItem.isDone = !value.isDone;
-            }
-            return newItem;
-        setItem(newItem)
+   const onClickDone = id => {
+    const newItemList = items.map( item => {
+        const newItem = {...item};
+        if (item.id === id) {
+            newItem.isDone = !item.isDone;
+        }
+        return newItem;
+    });
+    setItems(newItemList)
+    }; 
 
-      };
 
-
-    const onClickDelete = (id) => {
-        return item.id !== id;
-        setCount((count) => count-1)
-
+    const onClickDelete = id => {
+        return items.id !== id;
     };
+
+    const onClickAdd = value => {
+        const initialState = {
+        items: [
+             ...items, 
+            {
+               value,
+               isDone: false,
+               id: count +1
+            }
+        ],
+    }
+
+        setCount((count) => count-1)
+    };
+
     
         return (
             <div className={styles.wrap}>
                 <Card>
                     <CardContent>
                         <h1 className={styles.title}>Важные дела:</h1>
+                        <InputItem onClickAdd={onClickAdd} />
 
                         <ItemList
+                        items={items}
+                        onClickDone={onClickDone}
+                        onClickDelete={onClickDelete}
                         />
-                        <Footer />
+                        <Footer count={count} />
 
                     </CardContent>
                 </Card>

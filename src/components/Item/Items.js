@@ -28,11 +28,11 @@ const Item=() => {
         count: 3
     };
 
-        const [value, setValue] = useState(initialState.value);
-        const [isDone, setIsDone] = useState(initialState.isDone);
+        const [value] = useState(initialState.value);
+        const [isDone] = useState(initialState.isDone);
         const [onClickDone] = useState(initialState.onClickDone);
         const [onClickDelete] = useState(initialState.onClickDelete);
-        const [id, setId] = useState(initialState.id);
+        const [id] = useState(initialState.id);
 
         useEffect(()=> {
             console.log("update");
