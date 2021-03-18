@@ -52,7 +52,7 @@ const App=() => {
     };
 
     const onClickAdd = value => {
-        const initialState = {
+      const newItems = {
         items: [
              ...items, 
             {
@@ -61,9 +61,9 @@ const App=() => {
                id: count +1
             }
         ],
-    }
-
-        setCount((count) => count-1)
+    };
+    setItems(newItems)
+    setCount((count) => count-1)
     };
 
     

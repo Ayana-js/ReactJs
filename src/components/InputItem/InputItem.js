@@ -9,7 +9,7 @@ const InputItem = () => {
     error: false
   };
  
-const [value] = useState(initialState.value);
+const [value, setValue] = useState(initialState.value);
 // const [error] = useState(initialState.error);
 const [onClickAdd] = useState(initialState.onClickAdd);
 
@@ -18,10 +18,12 @@ useEffect(()=> {
 }, []);
 
  const onButtonClick = (event) => {
-      const initialState = ({ 
+      const newItem = ({ 
             value: event.target.value.toUpperCase(),
             error: event.target.value.length > 0,
-        })};
+        })
+        setValue(newItem)
+      };
 
     return (
       <Grid>
@@ -43,10 +45,12 @@ useEffect(()=> {
           onClick={() => {
             if (value !== '') {
                 onClickAdd(value);
-                const initialState = ({ 
+                const newItems = ({ 
                     value: '',
                     error: false
-                })}
+                })
+                setValue(newItems)
+              }
             }
           }
         >
