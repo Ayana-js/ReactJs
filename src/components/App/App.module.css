@@ -1,14 +1,25 @@
+body {
+    padding-top: 36px;
+    background: #eee;
+    font-family: Helvetica;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+}
+
 .wrap {
+    display: grid;
+    grid-template-areas: 'sidebar ... content content';
     margin: auto;
-    width: 350px;
-    height: 100%;
-  }
-  
-  .title {
-      font-family: Roboto;
-      color: #c15;
-  }
-  
-  .wrap__footer {
-      color: red;
-  }
+    width: 500px;
+}
