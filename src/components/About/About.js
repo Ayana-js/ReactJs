@@ -1,12 +1,40 @@
 
 import React from 'react';
-import styles from "../About/About.module.css";
+import { CardContent } from '@material-ui/core';
+import { LinearProgress } from '@material-ui/core';
+import { Octokit } from '@octokit/rest';
 
-const About = () => (
-        <div className={styles.wrap}>
-            <h3 className={styles.title}>Обо мне</h3>
-            <p className={styles.description}>Front-end разработчик</p>
-        </div>
+const octokit = new Octokit();
+
+class About extends React.Component {
+    state = {
+        isLoading: true,
+        repoList: []
+    }
+
+    componentDidMount() {
+        octokit.repos.listForUser({
+            userName: 'Ayana-js'
+        }).then(({ data }) => {
+            this.setState({
+                repoList: data,
+                isLoading: false
+            });
+        });
+    }
+    render () {
+        const { isLoading, repoList } = this.state
+        return (
+            <CardContent>
+                <h1>{ isLoading ? < LinearProgress /> : 'Список репозиториев:' }</h1>
+                {!isLoading && <ol>
+                        {repoList.map(repo => (<li key={repo.id}>
+                            {repo.html_url}
+                        </li>))}
+                    </ol>}
+            </CardContent>
 );
+    }
+}
 
 export default About;

@@ -11,7 +11,7 @@ class InputItem extends React.Component {
 
     onClickButton = (event) =>
         this.setState({
-            value: event.target.value.toUpperCase(),
+            value: event.target.value,
             buttonEnabled: event.target.value.length > 0
         });
 
