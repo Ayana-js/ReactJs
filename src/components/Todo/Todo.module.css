@@ -1,0 +1,13 @@
+.wrap {
+    margin: auto;
+    width: 350px;
+    height: 100%;
+  }
+  
+  .title {
+      color: #c15;
+  }
+  
+  .wrap__footer {
+      color: red;
+  }

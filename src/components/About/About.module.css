@@ -1,0 +1,29 @@
+.repos {
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+    color: black;
+}
+
+.title {
+    font-family: Roboto, sans-serif;
+    margin: 10px 0 20px 0;
+    color: #c15;
+    font-size: 35px;
+    font-weight: bolder;
+    padding: 0 0 0 20px;
+}
+
+.link {
+    text-decoration: none;
+    padding-left: 5px;
+    color: black;
+}
+
+a:hover {
+    color: #D3D3D3;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+}
