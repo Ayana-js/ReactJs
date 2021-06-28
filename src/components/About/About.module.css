@@ -16,10 +16,10 @@
 .link {
     text-decoration: none;
     padding-left: 5px;
-    color: #c15;
+    color: black;
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }

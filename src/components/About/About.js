@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CardContent } from '@material-ui/core';
 import { LinearProgress } from '@material-ui/core';
@@ -13,7 +12,8 @@ class About extends React.Component {
         isLoading: true,
         repoList: [],
         infoAboutUser: [],
-        isError: false
+        isError: false,
+        error: {}
     }
 
     componentDidMount() {
@@ -24,56 +24,59 @@ class About extends React.Component {
             this.setState({
                 repoList: data,
                 isLoading: false,
-                avatarUrl: data[0].owner.avatar_url,
-                login: data[0].owner.login
             });
         })
         .catch(err => {
             this.setState({ 
               isLoading: false,
               isError: true,
+              error: err
             });
           });
 
         octokit.users.getByUsername({
             username: 'Ayana-js'
           })
-          .then(({data}) => {
+          .then(({ data }) => {
             this.setState({ 
               infoAboutUser: data,
-              isLoading: false,
-              avatarUrl: data[0].owner.avatar_url,
-              login: data[0].owner.login
+              isLoading: false
             });
           })
           .catch(err => {
             this.setState({ 
               isLoading: false,
               isError: true,
+              error: err
             });
           });
     }
     render () {
-        const { isLoading, repoList, isError, infoAboutUser } = this.state
+        const { isLoading, repoList, infoAboutUser } = this.state
         return (
             <CardContent>
+              {this.state.isError && (
+               <div>
+                 <h3>{this.state.error.name}</h3>
+                 <p>{this.state.error.message}</p>
+               </div>
+              )}
                 <h1 className={styles.title}>{ isLoading ? < LinearProgress /> : 'Список репозиториев:' }</h1>
                 {!isLoading && <ol>
-                    <Avatar
-                classname={styles.avatar}
-                alt={this.state.repoList.username}
-                src={this.state.avatarUrl}
-              />
+               <Avatar 
+                  className={styles.avatar}  
+                 src={infoAboutUser.avatar_url}>
+               </Avatar>
               <div>
-                <h3>{this.state.login}</h3>
+                <h3>{infoAboutUser.login}</h3>
             </div>
-                        {repoList.map(repo => 
-                            (<li className={styles.repos} key={repo.id}>
-                            {repo.html_url}
-                            <a className={styles.link} href={repo.html_url}>
-                            {repo.name}
-                    </a>  
-                        </li>))}
+                {repoList.map(repo => 
+                  (<li key={repo.id} className={styles.repos}>
+                      <a className={styles.link} href={repo.html_url}>
+                      {repo.name}
+                      </a> 
+                  </li> 
+                    ))}
                     </ol>}
             </CardContent>
 );
