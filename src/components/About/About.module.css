@@ -19,6 +19,10 @@
     color: black;
 }
 
+a:hover {
+    color: #D3D3D3;
+}
+
 .avatar {
     width: 60px;
     height: 60px;
