@@ -9,4 +9,4 @@ const Contacts = () => (
         </div>
 );
 
-export default Contacts;
+export default Contacts; 
