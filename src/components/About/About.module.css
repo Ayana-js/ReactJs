@@ -1,6 +1,6 @@
 .wrap {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
     'header header header'
     'main main main';
     width: 700px;
@@ -9,9 +9,9 @@
 .header {
     box-shadow: 0 0 30px #C0C0C0;
     display: grid;
-    grid-template-areas: 
-    'ava cont ' 
-    'ava cont ';
+    grid-template-areas:
+    'ava cont' 
+    'ava cont';
     grid-area: header;
     border-radius: 10px;
     padding: 10px;
@@ -20,7 +20,7 @@
 
 .avatar {
     grid-area: ava;
-    width: 170px;
+    width: 210px;
     height: 210px;
     border-radius: 10px;
 }
@@ -44,34 +44,41 @@
     color: #999999;
 }
 
-.mail {
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
-    color: #999999;
-}
-
-.tel {
-    color: #999999;
-    padding: 0 350px 0 0;
+.img {
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
 }
 
 .link__mail {
-    color: #999999;
+    font-size: 12px;
     text-decoration: none;
-    padding: 0 0 0 5px;
+    color: #999999;
+    margin: 4px 0;
+    display: inline-flex;
 }
 
 .link__tel {
-    color: #999999;
+    font-size: 12px;
     text-decoration: none;
-    padding: 0 200px 0 25px;
+    color: #999999;
+    margin: 4px 0;
+    padding-right: 300px;
+    display: inline-flex;
 }
 
 .icons {
     display: flex;
     align-items: center;
-    margin: 20px 0 0 400px;
+    margin: 50px 0 0 400px;
+}
+
+.linkedin {
+    padding-right: 5px;
+}
+
+.github {
+    padding-right: 5px;
 }
 
 .main {
@@ -79,7 +86,6 @@
     grid-area: main;
     border-radius: 10px;
     padding: 10px;
-
 }
 
 .repos {
@@ -93,29 +99,33 @@
 
 .repo {
     display: flex;
-  align-items: center;
-  margin: 0 8px 8px 0;
-  height: 54px;
-  border: 2px solid #CCC;
-  border-radius: 10px;
-}
-
-.link {
-    text-decoration: none;
-    padding-left: 5px;
-    color: black;
+    align-items: center;
+    margin: 0 8px 8px 0;
+    height: 54px;
+    border: 2px solid #CCC;
+    border-radius: 10px;
 }
 
 .error {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 293px;
-  width: 100%;
-  background: url(../../img/error.png) center bottom 71px no-repeat;
-  background-size: 267px 164px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 293px;
+    width: 100%;
+    background: url(../../img/error.png) center bottom 71px no-repeat;
+    background-size: 265px 165px;
 }
+
+.error__text {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  
+  .error__help {
+    color: #999;
+    font-size: 14px;
+  }
 
 .list {
     overflow-y: auto;
@@ -125,17 +135,17 @@
 ::-webkit-scrollbar {
     width: 6px;
 }
-  
+
 ::-webkit-scrollbar-track {
     background: #FFF;
 }
-  
+
 ::-webkit-scrollbar-thumb {
     background: #CCC;
     border-radius: 6px;
 }
 
-.info-about-repository-wrapped {
+.repo_wrapped {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -144,130 +154,112 @@
     height: 36px;
     width: 100%;
     border-radius: 10px;
-  }
-  
-  .info-about-repository {
+}
+
+.repo_info {
     display: flex;
     align-items: center;
     font-size: 12px;
     color: #999;
-  }
+}
 
-  .info-about-repository-wrapped__link {
+.repo_link {
     font-size: 14px;
     font-weight: bold;
-  }
-  
-  .info-about-repository-wrapped__link:hover {
+}
+
+.repo_link:hover {
     color: #356EFF;
-  }
-  
-  .info-about-repository__null-icon {
+}
+
+.repo_info__null-icon {
     margin-right: 5px;
     height: 16px;
     width: 16px;
     background-color: #696969;
     border-radius: 50%;
-  }
-  
-  .info-about-repository__html-icon {
+}
+
+.repo_info__html-icon {
     margin-right: 5px;
     height: 16px;
     width: 16px;
     background: #E34C26;
     border-radius: 50%;
-  }
-  
-  .info-about-repository__css-icon {
+}
+
+.repo_info__css-icon {
     margin-right: 5px;
     height: 16px;
     width: 16px;
     background: #563D7C;
     border-radius: 50%;
-  }
-  
-  .info-about-repository__javascript-icon {
+}
+
+.repo_info__javascript-icon {
     margin-right: 5px;
     height: 16px;
     width: 16px;
     background: #F1E05A;
     border-radius: 50%;
-  }
-  
-  .info-about-repository__language {
+}
+
+.repo_language {
     display: flex;
     align-items: center;
     height: 100%;
     width: 73px;
-  }
-  
-  .info-about-repository__star {
+}
+
+.repo_star {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 45px;
-    background: url(../../img/star.png) left center no-repeat;
-  }
-  
-  .info-about-repository__union {
+    background: url(../../img/star.svg) left center no-repeat;
+}
+
+.repo_fork {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 45px;
-    background: url(../../img/union.png) left center no-repeat;
-  }
-  
-  .info-about-repository__update {
+    background: url(../../img/fork.svg) left center no-repeat;
+}
+
+.repo_update {
     display: flex;
     align-items: center;
     height: 100%;
-  }
-  
-  @media (max-width: 570px) {
-    .section {
-      min-height: 830px;
-    }
-  
-    .user__wrapp {
-      padding: 8px;
-    }
-  
-    .info {
-      flex-direction: column;
-    }
-  
-    .info__avatar,
-    .description,
-    .contacts {
-      margin: 0 auto;
-      text-align: center;
-    }
-  
-    .description__bio {
-      margin-bottom: 20px;
-    }
-  
-    .description__tg {
-      margin: 0 auto 10px auto;
-      text-align: center;
-    }
-  
-    .info-about-repository-wrapped {
-      height: 41px;
-    }
-  
-    .works__title {
-      padding-left: 8px;
-    }
-  }
-  
-  @media (max-width: 400px) {
-    .info-about-repository__update {
-      display: none;
-    }
-  }
+}
 
+@media (max-width: 570px) {
+    .wrap {
+        min-height: 830px;
+    }
 
-  
+    .header {
+        padding: 8px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .avatar{
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .repo_wrapped {
+        height: 41px;
+    }
+}
+
+@media (max-width: 400px) {
+    .repo_update {
+        display: none;
+    }
+}

@@ -12,11 +12,11 @@ body {
     margin: auto;
     width: 700px;
     height: 630px;
-    grid-gap: 10px;
 }
 
 .header {
     grid-area: h;
+    margin-left: 20px;
     height: 66px;
     padding: 20px 200px 0 200px;
     background: url(../../img/whs.png) left top 10px no-repeat;
@@ -25,6 +25,7 @@ body {
 
 .header_link {
     padding: 13px 32px;
+    margin-top: 20px;
     height: 19px;
     font-size: 16px;
     font-weight: bold;
@@ -39,7 +40,7 @@ body {
     box-shadow: 0 0 3px rgba(0, 0, 0, .25);
     border-radius: 37px;
   }
-
+  
   .header_todo {
     color: #FFF;
     background-color: #356EFF;

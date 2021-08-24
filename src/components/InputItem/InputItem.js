@@ -1,6 +1,6 @@
 import React from "react";
-import Input from '@material-ui/core/Input';
-import Button from '@material-ui/core/Button';
+import IconAdd from "../../img/add.svg"
+import styles from './InputItem.module.css'
 
 class InputItem extends React.Component {
     state = {
@@ -19,20 +19,19 @@ class InputItem extends React.Component {
 
     render () {
         const { onClickAdd } = this.props;
-        return (<div >
-            <Input
-                id="standard-with-placeholder"
-                label="Добавить задачу"
-                placeholder="Введите планируемое дело здесь"
-                fullWidth
+
+        return (<div className={styles.wrap}>
+           
+            <input className={styles.input} 
+                type="text"
+                placeholder={'Введите новое дело'}
                 value={this.state.value}
-                onChange={ this.onClickButton }
-            />
-            <Button
+                onChange={ this.onClickButton }>
+            </input>
+
+            <div
+                className={styles.button}
                 disabled={!this.state.buttonEnabled}
-                variant="contained"
-                color="secondary"
-                fullWidth
                 onClick={() => {
                     if (this.state.value !== '') {
                         onClickAdd(this.state.value);
@@ -40,10 +39,9 @@ class InputItem extends React.Component {
                             buttonEnabled: false
                         })}
                     }
-                }
-            >
-                Добавить
-            </Button>
+                }> 
+                   <img src={IconAdd} alt=""/> 
+            </div>
         </div>)
     }
 }
