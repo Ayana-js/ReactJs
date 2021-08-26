@@ -4,22 +4,56 @@ body {
     font-family: Helvetica;
 }
 
-.link {
-    text-decoration: none;
-    color: black;
-}
-
-.sidebar {
-    grid-area: sidebar;
-}
-
-.content {
-    grid-area: content;
-}
-
 .wrap {
     display: grid;
-    grid-template-areas: 'sidebar ... content content';
+    grid-template-areas:
+     'h h'
+     'c c';
     margin: auto;
-    width: 500px;
+    width: 700px;
+    height: 630px;
+}
+
+.header {
+    grid-area: h;
+    margin-left: 20px;
+    height: 66px;
+    padding: 20px 200px 0 200px;
+    background: url(../../img/whs.png) left top 10px no-repeat;
+    background-size: 124px 32px;
+}
+
+.header_link {
+    padding: 13px 32px;
+    margin-top: 20px;
+    height: 19px;
+    font-size: 16px;
+    font-weight: bold;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .header_about {
+    color: #FFF;
+    background-color: #356EFF;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+    border-radius: 37px;
+  }
+  
+  .header_todo {
+    color: #FFF;
+    background-color: #356EFF;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+    border-radius: 37px;
+  }
+  
+  @media (max-width: 520px) {
+    .header {
+      background: none;
+    }
+  }
+
+.content {
+    grid-area: c;
 }

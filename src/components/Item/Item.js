@@ -5,7 +5,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
+import DeleteIcon from '@material-ui/icons/Delete';
 import PropTypes from 'prop-types'
 
 class Item extends React.Component {
@@ -34,6 +34,7 @@ class Item extends React.Component {
                 <Checkbox
                     onClick={() => onClickDone(id)}
                     checked={isDone}
+                    color="primary"
                 />
                 <div className={
                     classnames({
@@ -42,7 +43,7 @@ class Item extends React.Component {
                 }> {value}</div>
                 <ListItemSecondaryAction className={styles.delete}>
                     <IconButton aria-label="Comments" onClick={() => onClickDelete(id)}>
-                        <DeleteForeverRoundedIcon/>
+                        <DeleteIcon/>
                     </IconButton>
                 </ListItemSecondaryAction>
             </ListItem>
