@@ -1,6 +1,8 @@
 import React from "react";
 import IconAdd from "../../img/add.svg"
+import Item from "../Item/Item";
 import styles from './InputItem.module.css'
+import classnames from 'classnames'
 
 class InputItem extends React.Component {
     state = {
@@ -16,17 +18,24 @@ class InputItem extends React.Component {
         });
 
 
-
     render () {
-        const { onClickAdd } = this.props;
+        const { onClickAdd, id, isEmpty, isExist } = this.props;
 
         return (<div className={styles.wrap}>
-           
+            <div className={classnames({
+          [styles.input_wrap]: true,
+          [styles.empty_field]: isEmpty,
+          [styles.exist_field]: isExist
+        })
+        }>
+            <div className={styles.wrap}>
             <input className={styles.input} 
                 type="text"
                 placeholder={'Введите новое дело'}
                 value={this.state.value}
-                onChange={ this.onClickButton }>
+                onChange={ this.onClickButton }
+                id = {id}>
+
             </input>
 
             <div
@@ -41,6 +50,8 @@ class InputItem extends React.Component {
                     }
                 }> 
                    <img src={IconAdd} alt=""/> 
+            </div>
+            </div>
             </div>
         </div>)
     }

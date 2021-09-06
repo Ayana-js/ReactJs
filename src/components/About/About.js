@@ -80,12 +80,33 @@ class About extends React.Component {
                             <div className={styles.content}>
                                 <h1 className={styles.name}>Ayana Sultanova </h1>
                                 <p className={styles.description}> Front-end developer </p>
-                                <a className={styles.link__mail} href="mailto: ayana.sultanovaa@gmail.com"><img className={styles.img} src={iconMail} alt=""/>ayana.sultanovaa@gmail.com</a>
-                                <a className={styles.link__tel} href="https://t.me/ayasltn"><img className={styles.img} src={iconTelegram} alt=""/>+996 551 99 86 55</a>
+                                <a className={styles.link__mail}
+                                   href="mailto: ayana.sultanovaa@gmail.com"
+                                   target='_blank' rel='noopener noreferrer'>
+                                   <img className={styles.img} src={iconMail} alt=""/>
+                                   ayana.sultanovaa@gmail.com
+                                </a>
+                                <a className={styles.link__tel}
+                                   href="https://t.me/ayasltn" target='_blank' 
+                                   rel='noopener noreferrer'>
+                                   <img className={styles.img} src={iconTelegram} alt=""/>
+                                   +996 551 99 86 55
+                                </a>
                             <div className={styles.icons}>
-                                <a href="http://linkedin.com/in/aiana-sultanova-888606207" className={styles.linkedin}><img src={iconLink} alt=""/></a>
-                                <a href="https://github.com/Ayana-js" className={styles.github}><img src={iconGithub} alt=""/></a>
-					            <a href="https://www.facebook.com/profile.php?id=100026307923055"><img src={iconFacebook} alt=""/></a>
+                                <a href="http://linkedin.com/in/aiana-sultanova-888606207" 
+                                   className={styles.linkedin} target='_blank' 
+                                   rel='noopener noreferrer'>
+                                   <img src={iconLink} alt=""/>
+                                </a>
+                                <a href="https://github.com/Ayana-js"
+                                   className={styles.github} 
+                                   target='_blank' rel='noopener noreferrer'>
+                                   <img src={iconGithub} alt=""/>
+                                </a>
+					            <a href="https://www.facebook.com/profile.php?id=100026307923055" 
+                                   target='_blank' rel='noopener noreferrer'>
+                                   <img src={iconFacebook} alt=""/>
+                                </a>
                                 </div>
                             </div>
                         </div>

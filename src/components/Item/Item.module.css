@@ -13,11 +13,6 @@
    margin-bottom: 20px;
 }
 
-.MuiListItem-root {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
 .item:hover {
     border-color: #356EFF;
 }
