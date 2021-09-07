@@ -2,9 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ____
+## Project introduction
 
 Hello everyone!
+
 This is my first application on React.js and final work at [WebHeroSchool](https://webheroschool.ru/). 
+
 You can see this application here
 ____
 ## Project description
@@ -14,7 +17,7 @@ My application has two pages.
 1. Information about me and my contacts for communication.
 
 2. Todo list.
-
+____
 ## Available Scripts
 
 In the project directory, you can run:
