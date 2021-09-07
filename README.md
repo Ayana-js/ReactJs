@@ -2,8 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ____
+
 Hello everyone!
-This is my first application on React.js and final work at WebHeroSchool(https://webheroschool.ru/).
+This is my first application on React.js and final work at [WebHeroSchool](https://webheroschool.ru/). 
 You can see this application here
 ____
 ## Project description
