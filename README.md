@@ -1,9 +1,24 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+____
 Hello everyone!
-This is my first application on React.js and final work at WebHeroSchool.
-You can see this application
+This is my first application on React.js and final work at WebHeroSchool(https://webheroschool.ru/).
+You can see this application here
+____
+## Project description
+
+My application has two pages.
+
+1. Information about me and my contacts for communication:
+<p align="center">
+  <img src="./src/img/about-me.PNG" alt="image" />
+</p>
+
+2. Todo list:
+<p align="center">
+  <img src="./src/img/todo.PNG" alt="image" />
+</p>
 
 ## Available Scripts
 
