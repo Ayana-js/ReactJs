@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello everyone!
+This is my first application on React.js and final work at WebHeroSchool.
+You can see this application
 
 ## Available Scripts
 
