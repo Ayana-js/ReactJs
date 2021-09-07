@@ -11,15 +11,9 @@ ____
 
 My application has two pages.
 
-1. Information about me and my contacts for communication:
-<p align="center">
-  <img src="./src/img/about-me.PNG" alt="image" />
-</p>
+1. Information about me and my contacts for communication.
 
-2. Todo list:
-<p align="center">
-  <img src="./src/img/todo.PNG" alt="image" />
-</p>
+2. Todo list.
 
 ## Available Scripts
 
