@@ -12,27 +12,6 @@ const sortingItemsTitle = {
 };
 
 class Todo extends React.Component {
-    // state = {
-    //     items: [
-    //         {
-    //             value: 'Написать новое приложение',
-    //             isDone: true,
-    //             id: 1
-    //         },
-    //         {
-    //             value: 'Найти работу',
-    //             isDone: true,
-    //             id: 2
-    //         },
-    //         {
-    //             value: 'Отправить репозиторий',
-    //             isDone: false,
-    //             id: 3
-    //         }],
-    //     count: 3,
-    //     selectedMenuItem: 'all',
-    //     empty: false
-    // };
     
     state = {
       items: 
@@ -65,17 +44,6 @@ class Todo extends React.Component {
 
     }));
 
-    // onClickAdd = (value) => this.setState(state => ({
-    //     items:[
-    //         ...state.items,
-    //         {
-    //             value,
-    //             isDone: false,
-    //             id: state.count + 1
-    //         }],
-
-    //     count: state.count + 1
-    // }));
 
     onClickAdd = value => {
       if (value !== '' & !this.state.items.some(item=> item.value.toLowerCase() === value.toLowerCase())) {
@@ -106,23 +74,7 @@ class Todo extends React.Component {
     onClickSort = sorting => this.setState({ sorting: sorting });
 
     render() {
-        // const allItems = this.state.items;
-        // const completedItems = this.state.items.filter(item => item.isDone === true)
-        // const uncompletedItems = this.state.items.filter(item => item.isDone === false)
-
-        // let items;
-        // switch (this.state.selectedMenuItem) {
-        //     case 'all':
-        //         items = allItems;
-        //         break;
-        //     case 'completedItems':
-        //         items = completedItems
-        //         break;
-        //     case 'uncompletedItems':
-        //         items = uncompletedItems
-        //         break;
-        //     default:
-        //         items = allItems;
+        
         let dealListString = JSON.stringify(this.state.items);
     localStorage.setItem('editedDealList', dealListString);
 
@@ -134,7 +86,9 @@ class Todo extends React.Component {
       break;
       case sortingItemsTitle.all: sortingItems = this.state.items;
       break;
-        };
+      default :
+
+      };
 
         return (
 
@@ -146,50 +100,18 @@ class Todo extends React.Component {
                     <div className={styles.header}>
                     <h1 className={styles.title}>Список моих дел</h1>
                     <Filter
-            items={this.state.items} 
-            onClickSort={this.onClickSort}
-            sorting={this.state.sorting}
-          />
-                    {/* <button
-                onClick={() => {
-                  this.setState({
-                    selectedMenuItem: 'completedItems',
-                  });
-                }} 
-                className={styles.done}>
-                Завершённые 
-                <span className={styles.done_length}>
-                  {completedItems.length}
-                </span>
-              </button>
-              <button
-                onClick={() => {
-                  this.setState({
-                    selectedMenuItem: 'uncompletedItems',
-                  });
-                }} 
-                className={styles.not_done}>
-                  Незавершённые 
-                  <span className={styles.not_done_length}>
-                    {uncompletedItems.length}
-                  </span>
-                </button>
-              <button
-                onClick={() => {
-                  this.setState({
-                    selectedMenuItem: 'all',
-                  });
-                }} 
-                className={styles.all_done}
-              >
-                Все
-              </button> */}
-             </div>
+                      items={this.state.items} 
+                      onClickSort={this.onClickSort}
+                      sorting={this.state.sorting}
+                    />
+                </div>
 
-
-
-                    <ItemList sorting={sortingItems}
-            sortingValue={this.state.sorting} items={this.state.items} onClickDone={this.onClickDone} onClickDelete={ this.onClickDelete }/>
+                    <ItemList 
+                      sorting={sortingItems}
+                      sortingValue={this.state.sorting} 
+                      items={this.state.items} 
+                      onClickDone={this.onClickDone}
+                      onClickDelete={ this.onClickDelete }/>
                     <InputItem 
                     onClickAdd={this.onClickAdd} 
                     isEmpty={this.state.isEmpty}

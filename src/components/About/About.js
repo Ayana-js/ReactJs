@@ -20,7 +20,9 @@ class About extends React.Component {
         infoAboutUser: [],
         isError: false,
         isErrorRepositories: false,
-        error: {}
+        error: {},
+        firstRepo: 0,
+        lastRepo: 5
     }
 
     componentDidMount() {
@@ -56,10 +58,26 @@ class About extends React.Component {
                     isError: true,
                     error: err
                 });
-            });
-    }
+            });    
+    };
+
+    onClickNext = () => {
+        this.setState({
+          firstRepo: this.state.firstRepo + 5,
+          lastRepo: this.state.lastRepo + 5
+        });
+      };
+    
+      onClickBack = () => {
+        this.setState({
+          firstRepo: this.state.firstRepo - 5,
+          lastRepo: this.state.lastRepo - 5
+        });
+      };
+    
     render() {
-        const { isLoading, repoList, infoAboutUser } = this.state
+        const { isLoading, repoList, infoAboutUser, firstRepo, lastRepo, onClickNext, onClickBack } = this.state
+
         return (
             <div className={styles.wrap}>
                 <CardContent className={styles.wrap}>
@@ -125,7 +143,7 @@ class About extends React.Component {
                                 )}
                                 <div className={styles.repos}>
                                     <div className={styles.list}>
-                                        {repoList.map(repo =>
+                                        {repoList.slice(firstRepo, lastRepo).map(repo =>
                                             <ul key={repo.id}>
                                                 <div className={styles.repo}>
                                                     <div className={styles.repo_wrapped}>                                              
@@ -152,6 +170,22 @@ class About extends React.Component {
                                 </div>
                             </div>
                         }
+                         <div className={styles.buttons_wrap}>
+          <button
+            className={styles.button}
+            onClick={()=>onClickBack()}
+            disabled={firstRepo < 5}
+          >
+            Назад
+          </button>
+          <button
+            className={styles.button}
+            onClick={()=>onClickNext()}
+            disabled={repoList.length - lastRepo <= 0}
+          >
+            Далее
+          </button>
+        </div>
                     </div>}
                 </CardContent>
             </div>
