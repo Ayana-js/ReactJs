@@ -30,10 +30,6 @@
     grid-area: cont;
 }
 
-.color {
-    color: #999999;
-}
-
 .name {
     margin-bottom: 0;
 }
@@ -65,6 +61,14 @@
     margin: 4px 0;
     padding-right: 300px;
     display: inline-flex;
+}
+
+.link__mail:hover {
+    color: #356EFF;
+}
+
+.link__tel:hover {
+    color: #356EFF;
 }
 
 .icons {
@@ -130,19 +134,6 @@
 .list {
     overflow-y: auto;
     width: 90%;
-}
-
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: #FFF;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #CCC;
-    border-radius: 6px;
 }
 
 .repo_wrapped {
@@ -235,6 +226,39 @@
     height: 100%;
 }
 
+.buttons_wrap {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .button {
+    color: #356EFF;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 37px;
+    background: none;
+    font: normal normal 14px/16px 'Roboto';
+    height: 32px;
+    width: 74px;
+    margin-right: 8px;
+    outline: none;
+  }
+  
+  .button:hover {
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #356EFF;
+    background: #356EFF;
+  }
+
+@media (max-width: 400px) {
+    .repo_update {
+        display: none;
+    }
+}
+
 @media (max-width: 570px) {
     .wrap {
         min-height: 830px;
@@ -258,8 +282,3 @@
     }
 }
 
-@media (max-width: 400px) {
-    .repo_update {
-        display: none;
-    }
-}

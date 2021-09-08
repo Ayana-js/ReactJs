@@ -32,6 +32,7 @@ class Item extends React.Component {
                 })
             } >
                 <Checkbox
+                    id={id}
                     onClick={() => onClickDone(id)}
                     checked={isDone}
                     color="primary"
@@ -41,7 +42,7 @@ class Item extends React.Component {
                         [styles.done]: isDone
                     })
                 }> {value}</div>
-                <ListItemSecondaryAction className={styles.delete}>
+                <ListItemSecondaryAction>
                     <IconButton aria-label="Comments" onClick={() => onClickDelete(id)}>
                         <DeleteIcon/>
                     </IconButton>
