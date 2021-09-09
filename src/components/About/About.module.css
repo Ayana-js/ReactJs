@@ -232,7 +232,7 @@
     justify-content: center;
   }
   
-  .button {
+.button {
     color: #356EFF;
     border: 1px solid #999;
     box-sizing: border-box;
@@ -244,14 +244,14 @@
     width: 74px;
     margin-right: 8px;
     outline: none;
-  }
+}
   
-  .button:hover {
+.button:hover {
     color: #fff;
     cursor: pointer;
     border: 1px solid #356EFF;
     background: #356EFF;
-  }
+}
 
 @media (max-width: 400px) {
     .repo_update {
@@ -281,4 +281,3 @@
         height: 41px;
     }
 }
-

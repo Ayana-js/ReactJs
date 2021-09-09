@@ -22,8 +22,22 @@ class About extends React.Component {
         isErrorRepositories: false,
         error: {},
         firstRepo: 0,
-        lastRepo: 5
+        lastRepo: 4
     }
+
+    lastPage = () => {
+        this.setState({
+            firstRepo: this.state.firstRepo - 4,
+            lastRepo: this.state.lastRepo - 4
+        });
+    };
+
+    nextPage = () => {
+        this.setState({
+            firstRepo: this.state.firstRepo + 4,
+            lastRepo: this.state.lastRepo + 4
+        });
+    };
 
     componentDidMount() {
         octokit.repos.listForUser({
@@ -61,22 +75,9 @@ class About extends React.Component {
             });    
     };
 
-    onClickNext = () => {
-        this.setState({
-          firstRepo: this.state.firstRepo + 5,
-          lastRepo: this.state.lastRepo + 5
-        });
-      };
-    
-      onClickBack = () => {
-        this.setState({
-          firstRepo: this.state.firstRepo - 5,
-          lastRepo: this.state.lastRepo - 5
-        });
-      };
     
     render() {
-        const { isLoading, repoList, infoAboutUser, firstRepo, lastRepo, onClickNext, onClickBack } = this.state
+        const { isLoading, repoList, infoAboutUser, firstRepo, lastRepo } = this.state
 
         return (
             <div className={styles.wrap}>
@@ -132,64 +133,60 @@ class About extends React.Component {
 
 
 
-                        {isLoading ? < LinearProgress /> :
-                            <div className={styles.main}>
-                                <h4> Репозитории на github.com</h4>
-                                {this.state.isError && (
-                                    <div className={styles.error}>
-                                        <p className={styles.error__text}>Что-то пошло не так...</p>
-                                        <p className={styles.error__help}>Попробуйте загрузить ещё раз</p>
-                                    </div>
-                                )}
-                                <div className={styles.repos}>
-                                    <div className={styles.list}>
-                                        {repoList.slice(firstRepo, lastRepo).map(repo =>
-                                            <ul key={repo.id}>
-                                                <div className={styles.repo}>
-                                                    <div className={styles.repo_wrapped}>                                              
-                                                      <a
-                                                        href={repo.html_url}
-                                                        className={styles.repo_link}
-                                                        target='_blank'
-                                                        rel='noopener noreferrer'
-                                                    >
-                                                        {repo.name}
-                                                    </a>
-                                                        <div className={styles.repo_info}>
-                                                            <div className={styles[`repo_info__${repo.language}-icon`.toLowerCase()]}></div>
-                                                            <p className={styles.repo_language}>{repo.language}</p>
-                                                            <p className={styles.repo_star}>{repo.stargazers_count}</p>
-                                                            <p className={styles.repo_fork}>{repo.forks}</p>
-                                                            <p className={styles.repo_update}>{repo.updated_at}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </ul>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                         <div className={styles.buttons_wrap}>
-          <button
-            className={styles.button}
-            onClick={()=>onClickBack()}
-            disabled={firstRepo < 5}
-          >
-            Назад
+        {isLoading ? < LinearProgress /> :
+         <div className={styles.main}>
+          <h4> Репозитории на github.com</h4>
+           {this.state.isError && (
+              <div className={styles.error}>
+                <p className={styles.error__text}>Что-то пошло не так...</p>
+                <p className={styles.error__help}>Попробуйте загрузить ещё раз</p>
+              </div>
+            )}
+            <div className={styles.repos}>
+              <div className={styles.list}>
+                {repoList.slice(firstRepo, lastRepo).map(repo =>
+                  <ul key={repo.id}>
+                    <div className={styles.repo}>
+                    <div className={styles.repo_wrapped}>                                              
+                      <a
+                        href={repo.html_url}
+                        className={styles.repo_link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                      {repo.name}
+                      </a>
+                      <div className={styles.repo_info}>
+                     <div className={styles[`repo_info__${repo.language}-icon`.toLowerCase()]}></div>
+                        <p className={styles.repo_language}>{repo.language}</p>
+                        <p className={styles.repo_star}>{repo.stargazers_count}</p>
+                        <p className={styles.repo_fork}>{repo.forks}</p>
+                        <p className={styles.repo_update}>{repo.updated_at}</p>
+                     </div>
+                    </div>
+                    </div>
+                  </ul>
+                )}
+              </div>
+              </div>
+              <div className={styles.buttons_wrap}>
+          <button className={styles.button}
+             onClick={this.lastPage}
+             disabled={firstRepo < 4}>
+              Назад
           </button>
-          <button
-            className={styles.button}
-            onClick={()=>onClickNext()}
-            disabled={repoList.length - lastRepo <= 0}
-          >
-            Далее
+          <button className={styles.button}
+             onClick={this.nextPage}
+             disabled={repoList.length < lastRepo}>
+              Далее
           </button>
         </div>
+              </div>
+            }
                     </div>}
                 </CardContent>
             </div>
-        );
+        );  
     }
 }
 

@@ -70,3 +70,15 @@
     margin-top: 5px;
     padding-right: 10px;
 }
+
+@media (max-width: 400px) {
+  .wrap {
+    bottom: 600px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrap {
+    bottom: 360px;
+  }
+}
