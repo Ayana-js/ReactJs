@@ -81,3 +81,9 @@
 .hidden {
   display: none;
 }
+
+@media (max-width: 400px) {
+  .wrap {
+    height: 200px;
+  }
+}
