@@ -4,7 +4,7 @@
     align-items: flex-start;
     margin-top: auto;
     position: fixed;
-    bottom: 180px;
+    bottom: 22%;
 }
 
 .input_wrap {
@@ -71,14 +71,8 @@
     padding-right: 10px;
 }
 
-@media (max-width: 400px) {
+@media (min-width:200px) and (max-width: 1900px) {
   .wrap {
-    bottom: 600px;
-  }
-}
-
-@media (max-width: 800px) {
-  .wrap {
-    bottom: 360px;
+    top: 610px;
   }
 }

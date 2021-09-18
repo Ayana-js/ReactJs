@@ -80,6 +80,7 @@ class About extends React.Component {
         const { isLoading, repoList, infoAboutUser, firstRepo, lastRepo } = this.state
 
         return (
+ // Информация о себе, контакты, соц. сети
             <div className={styles.wrap}>
                 <CardContent className={styles.wrap}>
                     {this.state.isError && (
@@ -129,18 +130,37 @@ class About extends React.Component {
                                 </div>
                             </div>
                         </div>
+{/* Мои проекты */}
 
-
-
+     {isLoading ? < LinearProgress /> :
+         <div className={styles.projects}>
+           <h4> Мои проекты:</h4>
+            <a className={styles.link__projects}
+                href="https://whs-ayanajs.vercel.app/"
+                target='_blank' 
+                rel='noopener noreferrer'> 
+                1. Сайт
+                </a>
+                <a className={styles.link__projects}
+                href="https://game-ayana.vercel.app/"
+                target='_blank' 
+                rel='noopener noreferrer'> 
+                2. Игра
+                </a>
+                <a className={styles.link__projects}
+                href="https://react-app-js-seven.vercel.app/"
+                target='_blank' 
+                rel='noopener noreferrer'> 
+                3. Приложение
+                 </a>
+        </div> }               
+{/* Список репозиториев  */}
 
         {isLoading ? < LinearProgress /> :
          <div className={styles.main}>
           <h4> Репозитории на github.com</h4>
            {this.state.isError && (
-              <div className={styles.error}>
-                <p className={styles.error__text}>Что-то пошло не так...</p>
-                <p className={styles.error__help}>Попробуйте загрузить ещё раз</p>
-              </div>
+              <div className={styles.error}></div>
             )}
             <div className={styles.repos}>
               <div className={styles.list}>
@@ -183,7 +203,7 @@ class About extends React.Component {
         </div>
               </div>
             }
-                    </div>}
+            </div>}
                 </CardContent>
             </div>
         );  
