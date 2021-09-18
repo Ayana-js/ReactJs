@@ -74,5 +74,6 @@
 @media (min-width:200px) and (max-width: 1900px) {
   .wrap {
     top: 610px;
+    width: 480px;
   }
 }
