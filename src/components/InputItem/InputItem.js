@@ -1,6 +1,5 @@
 import React from "react";
 import IconAdd from "../../img/add.svg"
-// import Item from "../Item/Item";
 import styles from './InputItem.module.css'
 import classnames from 'classnames'
 

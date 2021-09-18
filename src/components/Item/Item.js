@@ -9,22 +9,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import PropTypes from 'prop-types'
 
 class Item extends React.Component {
-    componentDidMount () {
-       this.timerId = setInterval(() => console.log(`${(new Date()).toUTCString()} выполняю Монтирование компонента "${this.props.value}"`), 900);
-    }
-
-    componentDidUpdate () {
-        console.log(`${(new Date()).toUTCString()} выполняю Обновление`)
-    }
-
-    componentWillUnmount() {
-        console.log(`${(new Date()).toUTCString()} выполняю Удаление`)
-        clearInterval(this.timerId);
-    }
-
     render () {
         const {value, isDone, onClickDone, id, onClickDelete} = this.props;
-
         return (
             <ListItem className={
                 classnames({
