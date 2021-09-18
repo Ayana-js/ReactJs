@@ -87,3 +87,9 @@
     height: 200px;
   }
 }
+
+@media (max-width: 1200px) {
+  .wrap {
+    width: 500px;
+  }
+}
