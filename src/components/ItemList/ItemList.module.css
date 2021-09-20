@@ -15,7 +15,7 @@
   }
   
   .no_deals_picture {
-    background: url(../../img/error.png) no-repeat;
+    background: url(../../img/error.svg) no-repeat;
     margin-bottom: 24px;
     height: 164px;
     width: 267px;

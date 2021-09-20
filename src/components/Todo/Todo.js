@@ -40,8 +40,6 @@ class Todo extends React.Component {
     onClickDelete = id => this.setState(state => ({
         items: state.items.filter(item =>
             item.id !== id),
-        // count: state.count - 1
-
     }));
 
 

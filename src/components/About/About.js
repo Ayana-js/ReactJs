@@ -159,7 +159,7 @@ class About extends React.Component {
         {isLoading ? < LinearProgress /> :
          <div className={styles.main}>
           <h4> Репозитории на github.com</h4>
-           {this.state.isError && (
+           {this.state.isErrorRepositories && (
               <div className={styles.error}></div>
             )}
             <div className={styles.repos}>
