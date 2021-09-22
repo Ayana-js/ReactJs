@@ -13,7 +13,7 @@ const App = () => (
             to='/'
             exact
             className={styles.header_link}
-            activeClassName={styles['header_about']}
+            activeClassName={styles.header_about}
           >
             Обо мне
           </NavLink>
