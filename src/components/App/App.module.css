@@ -49,6 +49,10 @@ body {
   }
   
   @media (max-width: 520px) {
+    .wrap {
+      position: fixed;
+    }
+    
     .header {
       background: none;
       width: 500px;

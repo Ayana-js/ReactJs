@@ -3,7 +3,6 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-top: auto;
-    position: fixed;
     top: 600px;
 }
 
@@ -75,9 +74,6 @@
   .wrap {
     top: 610px;
     width: 680px;
-  }
-  .button {
-    padding: auto;
   }
 }
 
