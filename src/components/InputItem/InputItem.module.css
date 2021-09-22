@@ -74,13 +74,15 @@
 @media (min-width:200px) and (max-width: 1200px) {
   .wrap {
     top: 610px;
-    width: 480px;
+    width: 680px;
+  }
+  .button {
+    padding: auto;
   }
 }
 
 @media (min-width:1205px) and (max-width: 1500px) {
   .wrap {
     top: 620px;
-    /* width: 480px; */
   }
 }

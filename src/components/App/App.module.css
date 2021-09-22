@@ -51,9 +51,11 @@ body {
   @media (max-width: 520px) {
     .header {
       background: none;
+      width: 500px;
+    }
+
+    .content {
+      width: 500px;
     }
   }
-
-.content {
-    grid-area: c;
-}
+ 
