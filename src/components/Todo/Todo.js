@@ -74,10 +74,10 @@ class Todo extends React.Component {
     render() {
         
         let dealListString = JSON.stringify(this.state.items);
-    localStorage.setItem('editedDealList', dealListString);
+            localStorage.setItem('editedDealList', dealListString);
 
     let sortingItems;
-    switch (this.state.sorting) {
+      switch (this.state.sorting) {
       case sortingItemsTitle.completed: sortingItems = this.state.items.filter(item => item.isDone);
       break;
       case sortingItemsTitle.unfinished: sortingItems = this.state.items.filter(item => !item.isDone);
@@ -85,11 +85,9 @@ class Todo extends React.Component {
       case sortingItemsTitle.all: sortingItems = this.state.items;
       break;
       default :
-
       };
 
         return (
-
                 <div className={styles.wrap}>
                    {this.state.empty && (
                        <div className={styles.empty}> </div>
@@ -116,7 +114,6 @@ class Todo extends React.Component {
                     isExist={this.state.isExist}/>
                     </CardContent>
                 </div>
-
            );
     }
 }

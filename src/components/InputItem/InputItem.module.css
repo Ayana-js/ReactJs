@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    position: fixed;
     margin-top: auto;
     top: 600px;
 }
@@ -70,15 +71,93 @@
     padding-right: 10px;
 }
 
-@media (min-width:200px) and (max-width: 1200px) {
+@media (max-width: 1500px) {
   .wrap {
-    top: 610px;
-    width: 680px;
+    top: 600px;
+  }
+
+  .exist_field:before{
+    width: 200px;
+    bottom: 15px;
+    font-size: 14px;
+    padding: 7px 12px;
+  }
+
+  .empty_field:before {
+    width: 200px;
+    bottom: 15px;
+    font-size: 14px;
+    padding: 7px 12px;
+  }
+
+  .exist_field:after,
+  .empty_field:after {
+    bottom: -5px;
   }
 }
 
-@media (min-width:1205px) and (max-width: 1500px) {
+@media (max-width: 500px) {
   .wrap {
-    top: 620px;
+    top: 580px;
+  }
+
+  .input {
+    width: 270px;
+  }
+  
+  .exist_field:before{
+    width: 100px;
+    bottom: 10px;
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .empty_field:before {
+    width: 100px;
+    bottom: 10px;
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .exist_field:after,
+  .empty_field:after {
+    bottom: -7px;
   }
 }
+
+@media (max-width: 330px) {
+  .wrap {
+    top: 510px;
+  }
+
+  .input {
+    width: 220px;
+    height: 30px;
+    font-size: 11px;
+  }
+  
+  .img {
+    width: 30px;
+  }
+
+  .exist_field:before{
+    width: 100px;
+    bottom: 10px;
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .empty_field:before {
+    width: 100px;
+    bottom: 10px;
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .exist_field:after,
+  .empty_field:after {
+    bottom: -7px;
+  }
+}
+
+

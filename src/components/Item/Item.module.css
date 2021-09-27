@@ -17,3 +17,10 @@
     border-color: #356EFF;
 }
 
+@media (max-width: 330px) {
+    .item {
+        margin-bottom: 10px;
+        height: 45px;
+    }
+}
+

@@ -268,9 +268,159 @@ button:disabled:hover {
     background: #356EFF;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
+    .wrap {
+        width: 300px;
+    }
+
+    .header {
+        margin-bottom: 10px;
+    }
+
+    .avatar {
+        width: 110px;
+        height: 110px;
+    }
+
+    .content {
+        padding-left: 10px;
+    }
+    
+    .name {
+        font-size: 20px;
+    }
+    
+    .description {
+        padding-top: 5px;
+        font-size: 15px;
+    }
+    
+    .img {
+        margin-right: 3px;
+        width: 10px;
+        height: 10px;
+    }
+    
+    .link__mail {
+        font-size: 9px;
+    }
+    
+    .link__tel {
+        padding-right: 100px;
+        font-size: 9px;
+    }
+    
+    .icons {
+        margin: 0 0 0 160px;
+    }
+
+    .linkedin {
+        width: 15px;
+        padding-right: 3px;
+    }
+    
+    .github {
+        padding-right: 3px;
+        width: 15px;
+    }
+
+    .facebook {
+        width: 15px;
+    }
+    
+    .projects {
+        margin-bottom: 10px;
+    }
+    
+    .link__projects {
+        display: block;
+        margin: 5px 0 5px 0;
+        text-decoration: none;
+        font-size: 11px;
+    }
+
+    .title {
+        font-size: 15px;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    .repo_title {
+        font-size: 15px;
+        margin: 0;
+    }
+    
+    .repos {
+        font-size: 11px;
+        margin: 10px 0 10px 0;
+        height: 300px;
+    }
+
+    .repo {
+        margin: 0 5px 13px 0;
+        height: 45px;
+    }
+    
+    .repo_info {
+        font-size: 9px;
+    }
+    
+    .repo_link {
+        font-size: 11px;
+        font-weight: bold;
+    }
+    
+    .repo_info__null-icon {
+        margin-right: 3px;
+        height: 12px;
+        width: 12px;
+    }
+    
+    .repo_info__html-icon {
+        margin-right: 3px;
+        height: 12px;
+        width: 12px;
+    }
+    
+    .repo_info__css-icon {
+        margin-right: 3px;
+        height: 12px;
+        width: 12px;
+    }
+    
+    .repo_info__javascript-icon {
+        margin-right: 3px;
+        height: 12px;
+        width: 12px;
+    }
+    
+    .repo_language {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 73px;
+    }
+    
+    .repo_star {
+        width: 50px;
+    }
+    
     .repo_update {
-        display: none;
+       font-size: 10px;
+       margin-top: 0;
+    }
+    
+    .buttons_wrap {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+      }
+      
+    .button {
+        background: none;
+        font: normal normal 11px/13px 'Roboto';
+        height: 28px;
+        width: 70px;
     }
 }
 
@@ -297,8 +447,45 @@ button:disabled:hover {
     }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 330px) {
     .wrap {
-        width: 300px;
+        width: 250px;
+    }
+    
+    .header {
+        width: 250px;
+    }
+
+    .name {
+        font-size: 15px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .main {
+        height: 200px;
+    }
+
+    .projects {
+        width: 250px;
+    }
+
+    .repos {
+        width: 250px;
+        height: 130px;
+    }
+
+    .repo {
+        height: 40px;
+    }
+
+    .list {
+        height: 130px;
+    }
+
+    .repo_update {
+        display: none;
     }
 }
