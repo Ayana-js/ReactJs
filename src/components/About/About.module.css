@@ -464,6 +464,14 @@ button:disabled:hover {
         font-size: 12px;
     }
 
+    .link__tel {
+        padding-right: 40px;
+    }
+
+    .icons {
+        margin: 10px 0 0 80px;
+    }
+
     .main {
         height: 200px;
     }

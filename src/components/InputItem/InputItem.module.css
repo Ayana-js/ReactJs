@@ -2,9 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    position: fixed;
+    /* position: fixed; */
     margin-top: auto;
-    top: 600px;
+    /* top: 600px; */
 }
 
 .input_wrap {

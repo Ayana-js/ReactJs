@@ -1,6 +1,6 @@
 .wrap {
     display: grid;
-    grid-template-areas: 't' 'h';
+    grid-template-rows: 100px 5fr 1fr;
     box-shadow: 0 0 30px #C0C0C0;
     border-radius: 10px;
     margin: auto;
@@ -20,7 +20,7 @@
 }
 
 .header {
-    grid-area: h;
+    grid-row: h;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -29,7 +29,6 @@
 }
   
 .title {
-    grid-area: t;
     margin: 0;
     font-weight: bold;
 }
@@ -80,6 +79,14 @@
 
 .hidden {
   display: none;
+}
+
+.itemList {
+  grid-row: itemList;
+}
+
+.input {
+  grid-row: input;
 }
 
 @media (max-width: 500px) {
