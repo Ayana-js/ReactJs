@@ -48,7 +48,7 @@ class InputItem extends React.Component {
                         })}
                     }
                 }> 
-                   <img src={IconAdd} alt=""/> 
+                   <img className={styles.img} src={IconAdd} alt=""/> 
             </div>
             </div>
             </div>

@@ -7,12 +7,12 @@ import styles from "./ItemList.module.css"
 const ItemList = ({sorting, sortingValue, items, onClickDone, onClickDelete }) => (
         <div>
     { sorting.length === 0 & sortingValue !== 'Завершенные' ?
-      <div className={styles.empty_list}>
-        <div className={styles.no_deals_picture}></div>
-        <p className={styles.no_deals_message}>Вы ещё не добавили ни одной задачи</p>
-        <p className={styles.do_it_message}>Сделайте это прямо сейчас!</p>
+      <div className={styles.empty}>
+        <div className={styles.img}></div>
+        <p className={styles.nodeal}>Вы ещё не добавили ни одной задачи</p>
+        <p className={styles.doit}>Сделайте это прямо сейчас!</p>
       </div> :
-      <ul className={styles.item_list}>
+      <ul className={styles.list}>
         {sorting.map(item => <li key={item.id}>
           <Item 
             value={item.value}

@@ -8,7 +8,7 @@ const Filter = ({ items, onClickSort, sorting }) => {
 
   return (
     <div className={styles.wrap}>
-      <div className={styles.button_group}>
+      <div className={styles.buttons}>
         <button 
           className={classnames({
             [styles.button]: true,

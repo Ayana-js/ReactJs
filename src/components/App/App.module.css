@@ -48,18 +48,41 @@ body {
     border-radius: 37px;
   }
   
-  @media (max-width: 520px) {
+  @media (max-width: 500px) {
     .wrap {
       position: fixed;
     }
-    
+
     .header {
-      background: none;
-      width: 500px;
+      width: 200px;
+      margin-left: 20px;
+      height: 30px;
+      padding: 10px 150px 0 130px;
+      background-size: 75px 25px;
+    }
+
+    .header_link {
+      padding: 10px 20px;
+      margin-top: 30px;
+      font-size: 12px;
+      width: 10px;
     }
 
     .content {
-      width: 500px;
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 330px) {
+    .header {
+      width: 150px;
+      padding: 10px 150px 0 100px;
+      background-size: 65px 20px;
+    }
+
+    .header_link {
+      padding: 8px 17px;
+      font-size: 10px;
     }
   }
  

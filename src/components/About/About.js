@@ -114,18 +114,17 @@ class About extends React.Component {
                                 </a>
                             <div className={styles.icons}>
                                 <a href="http://linkedin.com/in/aiana-sultanova-888606207" 
-                                   className={styles.linkedin} target='_blank' 
+                                   target='_blank' 
                                    rel='noopener noreferrer'>
-                                   <img src={iconLink} alt=""/>
+                                   <img className={styles.linkedin} src={iconLink} alt=""/>
                                 </a>
                                 <a href="https://github.com/Ayana-js"
-                                   className={styles.github} 
                                    target='_blank' rel='noopener noreferrer'>
-                                   <img src={iconGithub} alt=""/>
+                                   <img className={styles.github} src={iconGithub} alt=""/>
                                 </a>
 					            <a href="https://www.facebook.com/profile.php?id=100026307923055" 
                                    target='_blank' rel='noopener noreferrer'>
-                                   <img src={iconFacebook} alt=""/>
+                                   <img  className={styles.facebook} src={iconFacebook} alt=""/>
                                 </a>
                                 </div>
                             </div>
@@ -134,7 +133,7 @@ class About extends React.Component {
 
      {isLoading ? < LinearProgress /> :
          <div className={styles.projects}>
-           <h4> Мои проекты:</h4>
+           <h4 className={styles.title}> Мои проекты:</h4>
             <a className={styles.link__projects}
                 href="https://whs-ayanajs.vercel.app/"
                 target='_blank' 
@@ -158,7 +157,7 @@ class About extends React.Component {
 
         {isLoading ? < LinearProgress /> :
          <div className={styles.main}>
-          <h4> Репозитории на github.com</h4>
+          <h4 className={styles.repo_title}> Репозитории на github.com</h4>
            {this.state.isErrorRepositories && (
               <div className={styles.error}></div>
             )}
