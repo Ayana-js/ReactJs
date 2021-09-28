@@ -36,7 +36,7 @@
     
     .list {
       max-height: 300px;
-      padding-left: 20px; 
+      width: 320px;
     }
   
     .empty {
@@ -57,6 +57,6 @@
   
     .list {
       max-height: 200px;
-      padding-left: 0;
+      width: 275px;
     }
   }

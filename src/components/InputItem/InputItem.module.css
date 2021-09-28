@@ -2,9 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* position: fixed; */
     margin-top: auto;
-    /* top: 600px; */
 }
 
 .input_wrap {
@@ -72,10 +70,6 @@
 }
 
 @media (max-width: 1500px) {
-  .wrap {
-    top: 600px;
-  }
-
   .exist_field:before{
     width: 200px;
     bottom: 15px;
@@ -97,10 +91,6 @@
 }
 
 @media (max-width: 500px) {
-  .wrap {
-    top: 580px;
-  }
-
   .input {
     width: 270px;
   }
@@ -126,12 +116,8 @@
 }
 
 @media (max-width: 330px) {
-  .wrap {
-    top: 510px;
-  }
-
   .input {
-    width: 220px;
+    width: 230px;
     height: 30px;
     font-size: 11px;
   }
