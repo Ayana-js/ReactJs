@@ -441,6 +441,23 @@ button:disabled:hover {
         margin: 0 auto;
         text-align: center;
     }
+
+    .main {
+        height: 250px;
+    }
+
+    .repos {
+        width: 330px;
+        height: 170px;
+    }
+
+    .repo {
+        height: 40px;
+    }
+
+    .list {
+        height: 170px;
+    }
     
     .repo_wrapped {
         height: 41px;
@@ -462,6 +479,14 @@ button:disabled:hover {
 
     .description {
         font-size: 12px;
+    }
+
+    .link__tel {
+        padding-right: 40px;
+    }
+
+    .icons {
+        margin: 10px 0 0 80px;
     }
 
     .main {

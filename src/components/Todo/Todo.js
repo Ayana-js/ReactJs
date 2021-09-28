@@ -92,7 +92,9 @@ class Todo extends React.Component {
                    {this.state.empty && (
                        <div className={styles.empty}> </div>
                     )}
+                    
                     <CardContent>
+                  <div className={styles.wrapper}>
                     <div className={styles.header}>
                     <h1 className={styles.title}>Список моих дел</h1>
                     <Filter
@@ -100,19 +102,24 @@ class Todo extends React.Component {
                       onClickSort={this.onClickSort}
                       sorting={this.state.sorting}
                     />
-                </div>
-
+                    </div>
+                  <div>
                     <ItemList 
                       sorting={sortingItems}
                       sortingValue={this.state.sorting} 
                       items={this.state.items} 
                       onClickDone={this.onClickDone}
                       onClickDelete={ this.onClickDelete }/>
+                  </div>
+                  <div>
                     <InputItem 
-                    onClickAdd={this.onClickAdd} 
-                    isEmpty={this.state.isEmpty}
-                    isExist={this.state.isExist}/>
+                      onClickAdd={this.onClickAdd} 
+                      isEmpty={this.state.isEmpty}
+                      isExist={this.state.isExist}/>
+                  </div>
+                  </div>
                     </CardContent>
+                   
                 </div>
            );
     }
