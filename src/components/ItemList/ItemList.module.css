@@ -56,7 +56,6 @@
   @media (max-width: 330px) {
   
     .list {
-      max-height: 200px;
       width: 275px;
     }
   }
