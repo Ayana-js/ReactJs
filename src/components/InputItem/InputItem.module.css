@@ -93,6 +93,8 @@
 @media (max-width: 500px) {
   .input {
     width: 270px;
+    height: 35px;
+    font-size: 11px;
   }
   
   .exist_field:before{
@@ -117,9 +119,7 @@
 
 @media (max-width: 330px) {
   .input {
-    width: 230px;
-    height: 30px;
-    font-size: 11px;
+    width: 260px;
   }
   
   .img {
