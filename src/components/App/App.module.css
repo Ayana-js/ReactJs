@@ -5,7 +5,8 @@ body {
 }
 
 .wrap {
-    width: 700px;
+    max-width: 700px;
+    width: 100%;
     margin: 0 auto;
 } 
 
@@ -65,7 +66,7 @@ body {
 
     .header {
       /* width: 150px; */
-      padding: 10px 150px 0 100px;
+      /* padding: 10px 150px 0 100px; */
       background-size: 65px 20px;
       margin-bottom: 10px;
     }
