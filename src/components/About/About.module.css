@@ -1,10 +1,10 @@
 .wrap {
+    width: 100%;
     display: grid;
     grid-template-areas:
     'header header header'
     'projects projects projects'
     'main main main';
-    
 }
 
 .header {
@@ -268,7 +268,7 @@ button:disabled:hover {
     background: #356EFF;
 }
 
-/* @media (max-width: 500px) {
+@media (max-width: 500px) {
     .header {
         margin-bottom: 10px;
     }
@@ -302,13 +302,13 @@ button:disabled:hover {
     }
     
     .link__tel {
-        padding-right: 100px;
+        /* padding-right: 100px; */
         font-size: 9px;
     }
     
-    .icons {
+    /* .icons {
         margin: 0 0 0 160px;
-    }
+    } */
 
     .linkedin {
         width: 15px;
@@ -355,9 +355,9 @@ button:disabled:hover {
     .repo {
         margin: 0 5px 13px 0;
         height: 45px;
-    } */
+    }
     
-    /* .repo_info {
+    .repo_info {
         font-size: 9px;
     }
     
@@ -418,17 +418,17 @@ button:disabled:hover {
         height: 28px;
         width: 70px;
     }
-} */
+}
 
 @media (max-width: 330px) {  
-    /* .header {
+    .header {
         width: 250px;
-    } */
+    }
 
-    /* .name {
+    .name {
         font-size: 15px;
-    } */
-/* 
+    }
+
     .description {
         font-size: 12px;
     }
@@ -439,28 +439,28 @@ button:disabled:hover {
 
     .icons {
         margin: 10px 0 0 80px;
-    } */
+    }
 
-    /* .main {
+    .main {
         height: 200px;
-    } */
+    }
 
-    /* .projects {
+    .projects {
         width: 250px;
-    } */
+    }
 
-    /* .repos {
+    .repos {
         width: 250px;
         height: 130px;
-    } */
+    }
 
-    /* .repo {
+    .repo {
         height: 40px;
-    } */
+    }
 
-    /* .list {
+    .list {
         height: 130px;
-    } */
+    }
 
     .repo_update {
         display: none;

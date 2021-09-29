@@ -100,18 +100,22 @@ class About extends React.Component {
                             <div className={styles.content}>
                                 <h1 className={styles.name}>Ayana Sultanova </h1>
                                 <p className={styles.description}> Front-end developer </p>
+                                <div>
                                 <a className={styles.link__mail}
                                    href="mailto: ayana.sultanovaa@gmail.com"
                                    target='_blank' rel='noopener noreferrer'>
                                    <img className={styles.img} src={iconMail} alt=""/>
                                    ayana.sultanovaa@gmail.com
                                 </a>
+                                </div>
+                                <div>
                                 <a className={styles.link__tel}
                                    href="https://t.me/ayasltn" target='_blank' 
                                    rel='noopener noreferrer'>
                                    <img className={styles.img} src={iconTelegram} alt=""/>
                                    +996 551 99 86 55
                                 </a>
+                                </div>
                             <div className={styles.icons}>
                                 <a href="http://linkedin.com/in/aiana-sultanova-888606207" 
                                    target='_blank' 
