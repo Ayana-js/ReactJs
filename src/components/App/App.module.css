@@ -5,17 +5,12 @@ body {
 }
 
 .wrap {
-    display: grid;
-    grid-template-areas:
-     'h h'
-     'c c';
     margin: auto;
     width: 700px;
-    height: 630px;
+    height: 100%
 }
 
 .header {
-    grid-area: h;
     margin-left: 20px;
     height: 66px;
     padding: 20px 200px 0 200px;
@@ -49,13 +44,10 @@ body {
   }
   
   @media (max-width: 500px) {
-    .wrap {
-      position: fixed;
-    }
-
     .header {
       width: 200px;
       margin-left: 20px;
+      margin-bottom: 10px;
       height: 30px;
       padding: 10px 150px 0 130px;
       background-size: 75px 25px;
@@ -74,10 +66,12 @@ body {
   }
 
   @media (max-width: 330px) {
+
     .header {
       width: 150px;
       padding: 10px 150px 0 100px;
       background-size: 65px 20px;
+      margin-bottom: 10px;
     }
 
     .header_link {
