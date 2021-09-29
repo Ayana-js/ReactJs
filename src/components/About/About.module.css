@@ -4,7 +4,7 @@
     'header header header'
     'projects projects projects'
     'main main main';
-    width: 700px;
+    
 }
 
 .header {
@@ -268,11 +268,7 @@ button:disabled:hover {
     background: #356EFF;
 }
 
-@media (max-width: 500px) {
-    .wrap {
-        width: 300px;
-    }
-
+/* @media (max-width: 500px) {
     .header {
         margin-bottom: 10px;
     }
@@ -359,9 +355,9 @@ button:disabled:hover {
     .repo {
         margin: 0 5px 13px 0;
         height: 45px;
-    }
+    } */
     
-    .repo_info {
+    /* .repo_info {
         font-size: 9px;
     }
     
@@ -422,61 +418,17 @@ button:disabled:hover {
         height: 28px;
         width: 70px;
     }
-}
+} */
 
-@media (max-width: 570px) {
-    .wrap {
-        min-height: 830px;
-    }
-
-    .header {
-        padding: 8px;
-    }
-
-    .content {
-        flex-direction: column;
-    }
-
-    .avatar{
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .main {
-        height: 250px;
-    }
-
-    .repos {
-        width: 330px;
-        height: 170px;
-    }
-
-    .repo {
-        height: 40px;
-    }
-
-    .list {
-        height: 170px;
-    }
-    
-    .repo_wrapped {
-        height: 41px;
-    }
-}
-
-@media (max-width: 330px) {
-    .wrap {
+@media (max-width: 330px) {  
+    /* .header {
         width: 250px;
-    }
-    
-    .header {
-        width: 250px;
-    }
+    } */
 
-    .name {
+    /* .name {
         font-size: 15px;
-    }
-
+    } */
+/* 
     .description {
         font-size: 12px;
     }
@@ -487,28 +439,28 @@ button:disabled:hover {
 
     .icons {
         margin: 10px 0 0 80px;
-    }
+    } */
 
-    .main {
+    /* .main {
         height: 200px;
-    }
+    } */
 
-    .projects {
+    /* .projects {
         width: 250px;
-    }
+    } */
 
-    .repos {
+    /* .repos {
         width: 250px;
         height: 130px;
-    }
+    } */
 
-    .repo {
+    /* .repo {
         height: 40px;
-    }
+    } */
 
-    .list {
+    /* .list {
         height: 130px;
-    }
+    } */
 
     .repo_update {
         display: none;
