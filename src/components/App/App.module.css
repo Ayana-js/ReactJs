@@ -54,7 +54,7 @@ body {
       width: 200px;
       height: 30px;
       padding: 10px 90px 10px 100px;
-      background-size: 75px 25px;
+      background-size: 75px 20px;
     }
 
     .header_link {
@@ -68,7 +68,6 @@ body {
   @media (max-width: 330px) {
     .header {
       height: 20px;
-      background-size: 65px 20px;
     }
 
     .header_link {
